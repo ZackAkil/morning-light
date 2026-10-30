@@ -1,0 +1,38 @@
+#pragma once
+
+#include <avr/pgmspace.h>
+
+static const char kUiMarkup[] PROGMEM =
+    "<h1>Morning Light</h1>"
+    "<div class=\"row top\"><span>Time</span><strong id=\"tm\"></strong></div>"
+    "<div class=\"row\">"
+    "<span>LED: <strong id=\"st\"></strong></span>"
+    "<button id=\"btn\" onclick=\"toggle()\"></button>"
+    "</div>"
+    "<div class=\"sec\">Schedule</div>"
+    "<div class=\"row top\">"
+    "<label for=\"on\">On</label>"
+    "<span class=\"grp\"><input type=\"time\" id=\"on\"><input type=\"number\" id=\"fin\" min=\"0\" max=\"180\">m</span>"
+    "</div>"
+    "<div class=\"row\">"
+    "<label for=\"off\">Off</label>"
+    "<span class=\"grp\"><input type=\"time\" id=\"off\"><input type=\"number\" id=\"fout\" min=\"0\" max=\"180\">m</span>"
+    "</div>"
+    "<div class=\"row\">"
+    "<span>Start</span>"
+    "<span class=\"grp\"><input type=\"color\" id=\"sc\"><input type=\"number\" id=\"sb\" min=\"0\" max=\"100\">%</span>"
+    "</div>"
+    "<div class=\"row\">"
+    "<span>End</span>"
+    "<span class=\"grp\"><input type=\"color\" id=\"ec\"><input type=\"number\" id=\"eb\" min=\"0\" max=\"100\">%</span>"
+    "</div>"
+    "<div class=\"actions\"><button id=\"sbtn\" onclick=\"saveAlarm()\">Save</button></div>"
+    "<div class=\"sec\">Tester</div>"
+    "<div class=\"row top\">"
+    "<span>Preview</span>"
+    "<span class=\"grp\">"
+    "<input type=\"color\" id=\"tc\" oninput=\"testLed()\">"
+    "<input type=\"range\" id=\"tb\" min=\"0\" max=\"100\" value=\"50\" oninput=\"testLed()\">"
+    "<span class=\"pct\" id=\"tp\">50%</span>"
+    "</span>"
+    "</div>";
